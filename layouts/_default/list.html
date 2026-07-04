@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ .Title }}</title>
+</head>
+<body>
+<main>
+<h1>{{ .Title }}</h1>
+{{ range .Pages }}
+  <article>
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <time datetime="{{ .Date }}">{{ .Date.Format "2006-01-02" }}</time>
+    <p>标签：{{ delimit .Params.tags ", " }}</p>
+  </article>
+{{ end }}
+</main>
+</body>
+</html>
